@@ -21,7 +21,19 @@
   laggingSpan <- lag(Cl(HLC), nMed)
   lagSpanA <- lag(spanA, nMed)
   lagSpanB <- lag(spanB, nMed)
-  out <- cbind(turnLine=turningLine, baseLine=baseLine, spanA=spanA, spanB=spanB, plotSpan=plotSpan, laggingSpan=laggingSpan, lagSpanA, lagSpanB)
-  colnames(out) <- c("turnLine", "baseLine", "spanA", "spanB", "plotLagSpan", "laggingSpan", "lagSpanA","lagSpanB")
-  return (out)
+
+  c(addTA(turningLine , on = 1 , lwd=1, col =1),
+    addTA(baseLine , on = 1 , lwd=1, col =2),
+    addTA(spanA , on = 1 , lwd=2, col =3),
+    addTA(spanB , on = 1 , lwd=2, col =4),
+    addTA(plotSpan , on = 1 , lwd=1, col =5)
+    #     addTA(laggingSpan , on = 1 , lwd=1, col =6),
+    #     addTA(lagSpanA , on = 1 , lwd=1, col =7),
+    #     addTA(lagSpanB , on = 1 , lwd=1, col =8)
+    )
 }
+
+  #   out <- cbind(turnLine=turningLine, baseLine=baseLine, spanA=spanA, spanB=spanB, plotSpan=plotSpan, laggingSpan=laggingSpan, lagSpanA, lagSpanB)
+  #   colnames(out) <- c("turnLine", "baseLine", "spanA", "spanB", "plotLagSpan", "laggingSpan", "lagSpanA","lagSpanB")
+  #   return (out)
+# }
